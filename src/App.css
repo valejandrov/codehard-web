@@ -1,0 +1,12 @@
+.group-cards {
+    display: flex;
+    flex-direction: column;
+    width: 1184px;
+    margin: 35px auto;
+}
+
+.container-group-cards {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 10px;
+}

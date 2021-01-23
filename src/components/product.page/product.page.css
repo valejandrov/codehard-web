@@ -1,0 +1,162 @@
+.container {
+    /*margin-left: 50px;
+    margin-right: 50px;*/
+    width: 1184px;
+    margin: 0 auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.general-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    /*background: white;
+    padding: 15px;
+    border-radius: 10px;*/
+}
+
+.container {
+    flex: 0 1 auto;
+    margin-top: 10px;
+}
+
+.container-images {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+.mini-image {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.image-col {
+    text-align: center;
+}
+
+.gallery-col {
+    width: 100px;
+}
+
+.image {
+    text-align-last: center;
+    padding: 20px;
+    width: 530px;
+}
+
+.button {
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    color: #fff;
+    font-size: 22px;
+    padding: 12px 22px 12px 22px;
+    border: none;
+    text-decoration: none;
+    /*letter-spacing: 2px;*/
+    cursor: pointer;
+    text-align-last: center;
+    font-weight: 400;
+}
+
+.buy {
+    background-color: #3483FA;
+    border-color: #3483FA;
+    transition: 0.3s;
+}
+
+.buy:hover {
+    background-color: #2b6dd1;
+    border-color: #3483FA;
+}
+
+.addCart {
+    margin-top: 5px;
+    background-color: #c8deff;
+    color: #3483FA;
+    transition: 0.3s;
+}
+
+.addCart:hover {
+    margin-top: 5px;
+    background-color: #aabdda;
+    color: #3483FA;
+}
+
+.container-external {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    padding: 24px 16px;
+}
+
+.container-conditions {
+    align-self: center;
+    position: relative;
+    width: 100%;
+}
+
+.cash-mercadopago-container {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.prize-page {
+    font-size: 50px;
+    font-weight: 400;
+    width: 201px;
+}
+
+.commentary {
+    width: 94px;
+    position: relative;
+    top: 13px;
+}
+
+.logistic-container {
+    margin-top: 30px;
+}
+
+.buy-container {
+    margin-top: 30px;
+}
+
+.product-name {
+    font-size: 34px;
+    font-weight: 400;
+}
+
+.specifications {
+    margin-top: 30px;
+}
+
+progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    margin-bottom: 10px;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    /*border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;*/
+}
+
+progress[value]::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0, 0, 0, .1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)), -webkit-linear-gradient(left, #09c, rgb(68, 165, 255));
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+.specification-title {
+    font-size: 1.5625rem;
+}
+
+.specifications-first-column {}
+
+.specification-row {}
+
+.specification-item {}

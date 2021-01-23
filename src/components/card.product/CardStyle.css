@@ -1,0 +1,112 @@
+.CardStyle {
+    position: relative;
+    /*padding-top: 20px;*/
+    margin: 10px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+    transition: .2s ease all;
+    border-radius: 10px;
+    min-width: 284px;
+    max-width: 284px;
+    cursor: pointer;
+    background: white;
+}
+
+.CardStyle:hover {
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.product-image {
+    width: 100%;
+    padding-bottom: 22px;
+    border-radius: 10px 10px 0 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(234, 234, 234);
+}
+
+.content {
+    padding: 0 20px 15px;
+    text-align: left;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    flex-direction: column;
+    height: 175px;
+}
+
+.prize {
+    /*font-weight: 500;*/
+    margin-bottom: 13px;
+}
+
+.delivery {
+    margin-bottom: 7px;
+    font-size: 18px;
+}
+
+.prize-special-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.special-commentary-container {
+    align-self: center;
+    width: 60px;
+}
+
+.delivery-logo {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    width: 30px;
+    filter: invert(48%) sepia(76%) saturate(2293%) hue-rotate(75deg) brightness(114%) contrast(96%);
+}
+
+.title {
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.prize .symbol {
+    margin-right: 6px;
+}
+
+.prize .value {
+    margin-right: 10px;
+    font-size: 36px;
+}
+
+.prize .detail {
+    line-height: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    font-style: oblique;
+}
+
+.wrapper {
+    color: rgb(75, 177, 66);
+    animation: example 10s ease infinite;
+}
+
+@keyframes example {
+    0% {
+        color: rgb(103, 31, 197);
+    }
+    20% {
+        color: rgb(37, 65, 192);
+    }
+    40% {
+        color: rgb(37, 104, 192);
+    }
+    60% {
+        color: rgb(41, 214, 191);
+    }
+    80% {
+        color: rgb(41, 73, 214);
+    }
+    100% {
+        color: rgb(103, 31, 197);
+    }
+}
