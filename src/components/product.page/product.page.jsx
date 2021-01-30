@@ -3,26 +3,27 @@ import "../product.page/product.page.css";
 import imagen1 from "../card.product/imagen1.jpg";
 import imagen2 from "../card.product/imagen1.jpg";
 import imagen3 from "../card.product/imagen1.jpg";
-import { useParams } from 'react-router-dom';
-import { servicio } from '../../services/commonService.jsx'
+import { useParams } from "react-router-dom";
+import { servicio } from "../../services/commonService.jsx";
 
-function ProductPage({productosList}) {
-  var itemId = String(useParams().producto).split('$')[1];
-  //var product = servicio.
-  var product = productosList.find( item => {
-                  if(item.id == itemId){
-                    return item;
-                  }
-                });
-console.log(product); 
-  
-  function agregarAlCarrito() {
-    console.log("Comprando .....");
-  }
+function ProductPage({ productosList, agregarProducto, carrito }) {
+  document.documentElement.scrollTop = 0;
+  var itemId = String(useParams().producto).split("$")[1];
+  var product = productosList.find((item) => {
+    if (item.id == itemId) {
+      return item;
+    }
+  });
+  console.log("Id del producto: " + product);
 
+  const agregarAlCarrito = (id) => {
+    const productoAAgregar = productosList.filter((item) => item.id === id)[0];
+    agregarProducto([...carrito, productoAAgregar]);
+  };
+
+  //Enviar directamente a la pasarela de pagos
   function comprar() {}
 
-  // Esto se verá en pantalla
   return (
     <div className="container">
       <div className="general-container">
@@ -49,37 +50,44 @@ console.log(product);
             </div>
             <div className="logistic-container">Recibi tu producto</div>
             <div className="buy-container">
-
-            <div className="button buy" onClick={() => comprar()}>
-              Comprar
-            </div>
-            <div className="button addCart" onClick={() => agregarAlCarrito()}>
-              Agregar al carrito
-            </div>
+              <div className="button buy" onClick={() => comprar()}>
+                Comprar
+              </div>
+              <div
+                className="button addCart"
+                onClick={() => agregarAlCarrito(product.id)}
+              >
+                Agregar al carrito
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="specifications">
-          <div className="specification-title-container">
-            <div className="specification-title">Especificaciones</div>
-            <progress max="100" value="50"></progress>
-          </div>
-          <div className="specification-product-container">
-            <div className="specifications-first-column">
-              <span className="specification-row">
-                <p className="specification-item"><b>Marca : </b> Logitech </p>
-              </span>
-              <span className="specification-row">
-                <p className="specification-item"><b>Modelo : </b> G305 </p>
-              </span>
-              <span className="specification-row">
-                <p className="specification-item"><b>Dpi : </b> 12.000 </p>
-              </span>
-            </div>          
-          </div>
-
+        <div className="specification-title-container">
+          <div className="specification-title">Especificaciones</div>
+          <progress max="100" value="50"></progress>
         </div>
+        <div className="specification-product-container">
+          <div className="specifications-first-column">
+            <span className="specification-row">
+              <p className="specification-item">
+                <b>Marca : </b> Logitech{" "}
+              </p>
+            </span>
+            <span className="specification-row">
+              <p className="specification-item">
+                <b>Modelo : </b> G305{" "}
+              </p>
+            </span>
+            <span className="specification-row">
+              <p className="specification-item">
+                <b>Dpi : </b> 12.000{" "}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

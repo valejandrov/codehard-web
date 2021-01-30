@@ -55,7 +55,7 @@ function App() {
       <Router>
         <Header />
         <Route path="/productos/:producto">
-          <ProductPage productosList={productos}/>
+          <ProductPage productosList={productos} agregarProducto={agregarProducto} carrito={carrito}/>
         </Route>
 
         <Route path="/">
@@ -65,7 +65,7 @@ function App() {
               {productos.map((producto) => (
                 //<Link to={`/productos/${reemplazarEspacios(producto.nombre)}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <Link to={`/productos/${(reemplazarEspacios(producto.nombre).concat("_CD$"+producto.id))}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                  <CardProduct key={producto.id} producto={producto} />
+                  <CardProduct key={producto.id} producto={producto}/>
                 </Link>
               ))}
             </div>
