@@ -4,24 +4,33 @@ import imagen1 from "../card.product/imagen1.jpg";
 import imagen2 from "../card.product/imagen1.jpg";
 import imagen3 from "../card.product/imagen1.jpg";
 import { useParams } from "react-router-dom";
-import { servicio } from "../../services/commonService.jsx";
+//import { servicio } from "../../services/commonService.jsx";
+/*
+interface product{
+  id: Number,
+  nombre: String,
+  precio: Number,
+  categoria: String,
+  attributes: String[]
+}
+*/
 
 function ProductPage({ productosList, agregarProducto, carrito }) {
   document.documentElement.scrollTop = 0;
   var itemId = String(useParams().producto).split("$")[1];
   var product = productosList.find((item) => {
-    if (item.id == itemId) {
+    if (item.id.toString() == itemId) {
       return item;
     }
   });
-  console.log("Id del producto: " + product);
+  //console.log("Id del producto: " + product);
+  console.log(JSON.stringify(product, null, 4));
 
   const agregarAlCarrito = (id) => {
     const productoAAgregar = productosList.filter((item) => item.id === id)[0];
     agregarProducto([...carrito, productoAAgregar]);
   };
 
-  //Enviar directamente a la pasarela de pagos
   function comprar() {}
 
   return (
