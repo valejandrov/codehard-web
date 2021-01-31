@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import CardProduct from "./components/card.product/Card.product";
 import "./App.css";
 import ProductPage from "./components/product.page/product.page";
+import ProductAddPage from "./components/productAdmin/productAdd.page";
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,14 +34,16 @@ declare namespace JSX {
 }
 */
 
+
+
 //function App(): JSX.Element {
 function App() {
   // Hooks
   const [productos, setProductos] = useState([
-    { id: 1, nombre: "Fuente Para Pc Gamer Aureox 600w Arxgp", precio: 6550, categoria: "fuente" },
-    { id: 2, nombre: "Mouse Logitech G305", precio: 11940, categoria: "mouse" },
-    { id: 3, nombre: "Teclado HyperX RGB", precio: 5120, categoria: "teclado" },
-    { id: 4, nombre: "Gabinete Raidmax Neon 3 Fan RGB", precio: 12800, categoria: "gabinete" },
+    { id: 1, nombre: "Fuente Para Pc Gamer Aureox 600w Arxgp", precio: 6550, categoria: "fuente", attributes: { marca: "Aureox", modelo: "ARXGP 600w", otros: "otros"} },
+    { id: 2, nombre: "Mouse Logitech G305", precio: 11940, categoria: "mouse", attributes: { marca: "Logitech", modelo: "G305", otros: "otros"}  },
+    { id: 3, nombre: "Teclado HyperX RGB", precio: 5120, categoria: "teclado", attributes: { marca: "HyperX", modelo: "Alloy FPS RGB", otros: "otros"}  },
+    { id: 4, nombre: "Gabinete Raidmax Neon 3 Fan RGB", precio: 12800, categoria: "gabinete", attributes: { marca: "Raidmax", modelo: "Neon", otros: "otros"}  },
   ]);
 
   const [ carrito, agregarProducto ] = useState( [] );
@@ -54,18 +57,22 @@ function App() {
       
       <Router>
         <Header />
-        <Route path="/productos/:producto">
-          <ProductPage productosList={productos}/>
+        <Route path="/productAdd/">
+          <ProductAddPage />
         </Route>
 
-        <Route path="/">
+        <Route path="/productos/:producto">
+          <ProductPage productosList={productos} agregarProducto={agregarProducto} carrito={carrito}/>
+        </Route>
+
+        <Route exact path="/">
           <div className="group-cards">
             <span style={{ fontSize: "1.8rem" }}>Otros Productos</span>
             <div className="container-group-cards">
               {productos.map((producto) => (
                 //<Link to={`/productos/${reemplazarEspacios(producto.nombre)}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <Link to={`/productos/${(reemplazarEspacios(producto.nombre).concat("_CD$"+producto.id))}`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
-                  <CardProduct key={producto.id} producto={producto} />
+                  <CardProduct key={producto.id} producto={producto}/>
                 </Link>
               ))}
             </div>

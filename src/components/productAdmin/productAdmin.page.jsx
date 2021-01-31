@@ -15,7 +15,7 @@ interface product{
 }
 */
 
-function ProductPage({ productosList, agregarProducto, carrito }) {
+function ProductAdminPage({ productosList, agregarProducto, carrito }) {
   document.documentElement.scrollTop = 0;
   var itemId = String(useParams().producto).split("$")[1];
   var product = productosList.find((item) => {
