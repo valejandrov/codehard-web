@@ -1,0 +1,22 @@
+.productAddContainer {
+    /*margin-left: 50px;
+    margin-right: 50px;*/
+    width: 1184px;
+    margin: 0 auto;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.general-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    /*background: white;
+    padding: 15px;
+    border-radius: 10px;*/
+}
+
+.container {
+    flex: 0 1 auto;
+    margin-top: 10px;
+}
