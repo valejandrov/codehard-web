@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import CardProduct from "./components/card.product/Card.product";
 import "./App.css";
 import ProductPage from "./components/product.page/product.page";
+import ProductAddPage from "./components/productAdmin/productAdd.page";
 import {
   BrowserRouter as Router,
   Switch,
@@ -56,11 +57,15 @@ function App() {
       
       <Router>
         <Header />
+        <Route path="/productAdd/">
+          <ProductAddPage />
+        </Route>
+
         <Route path="/productos/:producto">
           <ProductPage productosList={productos} agregarProducto={agregarProducto} carrito={carrito}/>
         </Route>
 
-        <Route path="/">
+        <Route exact path="/">
           <div className="group-cards">
             <span style={{ fontSize: "1.8rem" }}>Otros Productos</span>
             <div className="container-group-cards">
